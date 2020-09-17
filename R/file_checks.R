@@ -22,6 +22,10 @@ oneRoster_file_columns <- list(
 
 
 
+
+#' Check OneRoster File column names
+#'
+#' @description A mostly internal function to check the column names and positions
 check_column_names <- function(data, file_type){
   file_type <- tolower(file_type)
   if(!(file_type %in% names(oneRoster_file_columns))){
@@ -35,4 +39,12 @@ check_column_names <- function(data, file_type){
   return(FALSE)
 
 }
-#
+
+#' Arrange the one Roster columns
+#'
+#' @importFrom dplyr `%>%`
+arrange_oneroster_columns <- function(data, file_name){
+  data %>%
+    dplyr::select(.dots = unlist(oneRoster_file_columns[file_name]))
+
+}
