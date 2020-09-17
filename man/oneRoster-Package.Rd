@@ -47,3 +47,4 @@ For Each state there are four types of transition events
 \item \strong{d[D]}: A delta transfer has occurred and the record status is set as 'tobedeleted'
 }
 }
+\keyword{internal}
